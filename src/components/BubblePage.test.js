@@ -1,13 +1,20 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import BubblePage from "./BubblePage";
+import {fetchColors as fakeFetchColors} from './fetchColors'
+
+jest.mock('./fetchColors')
 
 test("Renders BubblePage without errors", () => {
   // Finish this test
+  render(<BubblePage/>)
+
 });
 
-test("Fetches data and renders the bubbles on mounting", () => {
+test("Fetches data and renders the bubbles on mounting", async() => {
   // Finish this test
+  render(<BubblePage/>)
+  await fakeFetchColors.mockResolvedValueOnce(fakeColors)
 });
 
 //Task List
